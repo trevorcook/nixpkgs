@@ -5470,9 +5470,7 @@ in
 
   mirrorbits = callPackage ../servers/mirrorbits { };
 
-  mitmproxy = callPackage ../tools/networking/mitmproxy {
-    python3Packages = python37Packages;
-  };
+  mitmproxy = with python3Packages; toPythonApplication mitmproxy;
 
   mjpegtools = callPackage ../tools/video/mjpegtools { };
 
@@ -6055,6 +6053,8 @@ in
   oxipng = callPackage ../tools/graphics/oxipng { };
 
   p2pvc = callPackage ../applications/video/p2pvc {};
+
+  p3x-onenote = callPackage ../applications/office/p3x-onenote { };
 
   p7zip = callPackage ../tools/archivers/p7zip { };
 
@@ -23095,7 +23095,7 @@ in
 
   robustirc-bridge = callPackage ../servers/irc/robustirc-bridge { };
 
-  sddm = libsForQt5.callPackage ../applications/display-managers/sddm { };
+  sddm = libsForQt514.callPackage ../applications/display-managers/sddm { };
 
   skrooge = libsForQt514.callPackage ../applications/office/skrooge {};
 
@@ -24024,6 +24024,8 @@ in
   xautomation = callPackage ../tools/X11/xautomation { };
 
   xawtv = callPackage ../applications/video/xawtv { };
+
+  xbattbar = callPackage ../applications/misc/xbattbar { };
 
   xbindkeys = callPackage ../tools/X11/xbindkeys { };
 
